@@ -10,6 +10,7 @@
 		552C9F052C404EE6001B90EA /* ContactEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C9F042C404EE6001B90EA /* ContactEntity.swift */; };
 		55856F132C41445100FECD1F /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55856F122C41445100FECD1F /* DetailScreen.swift */; };
 		55856F152C41460900FECD1F /* AddContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55856F142C41460900FECD1F /* AddContactScreen.swift */; };
+		55856F182C41519A00FECD1F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55856F172C41519A00FECD1F /* SearchBar.swift */; };
 		55A2A26B2C4075E3008ADEE7 /* Sprint4CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2A26A2C4075E3008ADEE7 /* Sprint4CoreData.swift */; };
 		55ACE1372C3BF28D00317501 /* Sprint4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACE1362C3BF28D00317501 /* Sprint4App.swift */; };
 		55ACE1392C3BF28D00317501 /* ContactsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACE1382C3BF28D00317501 /* ContactsScreen.swift */; };
@@ -22,6 +23,7 @@
 		552C9F042C404EE6001B90EA /* ContactEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEntity.swift; sourceTree = "<group>"; };
 		55856F122C41445100FECD1F /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		55856F142C41460900FECD1F /* AddContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactScreen.swift; sourceTree = "<group>"; };
+		55856F172C41519A00FECD1F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		55A2A26A2C4075E3008ADEE7 /* Sprint4CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprint4CoreData.swift; sourceTree = "<group>"; };
 		55ACE1332C3BF28D00317501 /* Sprint4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprint4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55ACE1362C3BF28D00317501 /* Sprint4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprint4App.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		552C9F022C404E83001B90EA /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				55856F162C41518B00FECD1F /* components */,
 				552C9F032C404EC0001B90EA /* contacts */,
 				55ACE1362C3BF28D00317501 /* Sprint4App.swift */,
 				55856F122C41445100FECD1F /* DetailScreen.swift */,
@@ -75,6 +78,14 @@
 				55ACE1382C3BF28D00317501 /* ContactsScreen.swift */,
 			);
 			path = contacts;
+			sourceTree = "<group>";
+		};
+		55856F162C41518B00FECD1F /* components */ = {
+			isa = PBXGroup;
+			children = (
+				55856F172C41519A00FECD1F /* SearchBar.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		55ACE12A2C3BF28D00317501 = {
@@ -189,6 +200,7 @@
 				55856F152C41460900FECD1F /* AddContactScreen.swift in Sources */,
 				55856F132C41445100FECD1F /* DetailScreen.swift in Sources */,
 				55ACE1392C3BF28D00317501 /* ContactsScreen.swift in Sources */,
+				55856F182C41519A00FECD1F /* SearchBar.swift in Sources */,
 				552C9F052C404EE6001B90EA /* ContactEntity.swift in Sources */,
 				55ACE1372C3BF28D00317501 /* Sprint4App.swift in Sources */,
 			);

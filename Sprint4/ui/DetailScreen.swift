@@ -26,7 +26,7 @@ struct DetailScreen: View {
                 Text("Longitude: \(contact.longitude)")
             }
             .padding()
-            .navigationTitle("Contact Details")
+            .navigationTitle("\(contact.name ?? "") \(contact.lastName ?? "")")
         } else {
             Text("Contact not found")
                 .padding()
