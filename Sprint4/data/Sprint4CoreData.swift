@@ -1,14 +1,21 @@
 import Foundation
 import CoreData
 
-final class ContactsProvider {
+class Sprint4CoreData: ObservableObject {
+    let container: NSPersistentContainer
+    var context: NSManagedObjectContext {
+        container.viewContext
+    }
     
-    static let shared = ContactsProvider()
-    
-    private let persistentContainer: NSPersistentContainer
-    
-    private init() {
-        persistentContainer = NSPersistentContainer (name: "Sprint4")
-        persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+    init() {
+        container = NSPersistentContainer (name: "Sprint4")
+        setupDatabase()
+    }
+    func setupDatabase() {
+        container.loadPersistentStores{ description, error in
+            if let error = error {
+                print("Core Data failed to load: \(error.localizedDescription)")
+            }
+        }
     }
 }

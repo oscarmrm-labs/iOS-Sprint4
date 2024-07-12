@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552C9F052C404EE6001B90EA /* ContactEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C9F042C404EE6001B90EA /* ContactEntity.swift */; };
+		55856F132C41445100FECD1F /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55856F122C41445100FECD1F /* DetailScreen.swift */; };
+		55856F152C41460900FECD1F /* AddContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55856F142C41460900FECD1F /* AddContactScreen.swift */; };
+		55A2A26B2C4075E3008ADEE7 /* Sprint4CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2A26A2C4075E3008ADEE7 /* Sprint4CoreData.swift */; };
 		55ACE1372C3BF28D00317501 /* Sprint4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACE1362C3BF28D00317501 /* Sprint4App.swift */; };
-		55ACE1392C3BF28D00317501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACE1382C3BF28D00317501 /* ContentView.swift */; };
+		55ACE1392C3BF28D00317501 /* ContactsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACE1382C3BF28D00317501 /* ContactsScreen.swift */; };
 		55ACE13B2C3BF28E00317501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ACE13A2C3BF28E00317501 /* Assets.xcassets */; };
 		55ACE13E2C3BF28E00317501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ACE13D2C3BF28E00317501 /* Preview Assets.xcassets */; };
-		55ACE1402C3BF28E00317501 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACE13F2C3BF28E00317501 /* Persistence.swift */; };
 		55ACE1432C3BF28E00317501 /* Sprint4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55ACE1412C3BF28E00317501 /* Sprint4.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		552C9F042C404EE6001B90EA /* ContactEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEntity.swift; sourceTree = "<group>"; };
+		55856F122C41445100FECD1F /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
+		55856F142C41460900FECD1F /* AddContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactScreen.swift; sourceTree = "<group>"; };
+		55A2A26A2C4075E3008ADEE7 /* Sprint4CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprint4CoreData.swift; sourceTree = "<group>"; };
 		55ACE1332C3BF28D00317501 /* Sprint4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprint4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55ACE1362C3BF28D00317501 /* Sprint4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprint4App.swift; sourceTree = "<group>"; };
-		55ACE1382C3BF28D00317501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		55ACE1382C3BF28D00317501 /* ContactsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsScreen.swift; sourceTree = "<group>"; };
 		55ACE13A2C3BF28E00317501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55ACE13D2C3BF28E00317501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		55ACE13F2C3BF28E00317501 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		55ACE1422C3BF28E00317501 /* Sprint4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sprint4.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,6 +42,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		552C9F002C404E74001B90EA /* domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		552C9F012C404E7D001B90EA /* data */ = {
+			isa = PBXGroup;
+			children = (
+				552C9F042C404EE6001B90EA /* ContactEntity.swift */,
+				55A2A26A2C4075E3008ADEE7 /* Sprint4CoreData.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		552C9F022C404E83001B90EA /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				552C9F032C404EC0001B90EA /* contacts */,
+				55ACE1362C3BF28D00317501 /* Sprint4App.swift */,
+				55856F122C41445100FECD1F /* DetailScreen.swift */,
+				55856F142C41460900FECD1F /* AddContactScreen.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		552C9F032C404EC0001B90EA /* contacts */ = {
+			isa = PBXGroup;
+			children = (
+				55ACE1382C3BF28D00317501 /* ContactsScreen.swift */,
+			);
+			path = contacts;
+			sourceTree = "<group>";
+		};
 		55ACE12A2C3BF28D00317501 = {
 			isa = PBXGroup;
 			children = (
@@ -55,10 +96,10 @@
 		55ACE1352C3BF28D00317501 /* Sprint4 */ = {
 			isa = PBXGroup;
 			children = (
-				55ACE1362C3BF28D00317501 /* Sprint4App.swift */,
-				55ACE1382C3BF28D00317501 /* ContentView.swift */,
+				552C9F012C404E7D001B90EA /* data */,
+				552C9F002C404E74001B90EA /* domain */,
+				552C9F022C404E83001B90EA /* ui */,
 				55ACE13A2C3BF28E00317501 /* Assets.xcassets */,
-				55ACE13F2C3BF28E00317501 /* Persistence.swift */,
 				55ACE1412C3BF28E00317501 /* Sprint4.xcdatamodeld */,
 				55ACE13C2C3BF28E00317501 /* Preview Content */,
 			);
@@ -144,8 +185,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				55ACE1432C3BF28E00317501 /* Sprint4.xcdatamodeld in Sources */,
-				55ACE1402C3BF28E00317501 /* Persistence.swift in Sources */,
-				55ACE1392C3BF28D00317501 /* ContentView.swift in Sources */,
+				55A2A26B2C4075E3008ADEE7 /* Sprint4CoreData.swift in Sources */,
+				55856F152C41460900FECD1F /* AddContactScreen.swift in Sources */,
+				55856F132C41445100FECD1F /* DetailScreen.swift in Sources */,
+				55ACE1392C3BF28D00317501 /* ContactsScreen.swift in Sources */,
+				552C9F052C404EE6001B90EA /* ContactEntity.swift in Sources */,
 				55ACE1372C3BF28D00317501 /* Sprint4App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
