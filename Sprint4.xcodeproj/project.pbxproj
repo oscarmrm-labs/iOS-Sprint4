@@ -63,11 +63,10 @@
 		552C9F022C404E83001B90EA /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				55856F1A2C4155EA00FECD1F /* addContact */,
+				55856F192C4155D600FECD1F /* detail */,
 				55856F162C41518B00FECD1F /* components */,
 				552C9F032C404EC0001B90EA /* contacts */,
-				55ACE1362C3BF28D00317501 /* Sprint4App.swift */,
-				55856F122C41445100FECD1F /* DetailScreen.swift */,
-				55856F142C41460900FECD1F /* AddContactScreen.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -86,6 +85,22 @@
 				55856F172C41519A00FECD1F /* SearchBar.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		55856F192C4155D600FECD1F /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				55856F122C41445100FECD1F /* DetailScreen.swift */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
+		55856F1A2C4155EA00FECD1F /* addContact */ = {
+			isa = PBXGroup;
+			children = (
+				55856F142C41460900FECD1F /* AddContactScreen.swift */,
+			);
+			path = addContact;
 			sourceTree = "<group>";
 		};
 		55ACE12A2C3BF28D00317501 = {
@@ -110,6 +125,7 @@
 				552C9F012C404E7D001B90EA /* data */,
 				552C9F002C404E74001B90EA /* domain */,
 				552C9F022C404E83001B90EA /* ui */,
+				55ACE1362C3BF28D00317501 /* Sprint4App.swift */,
 				55ACE13A2C3BF28E00317501 /* Assets.xcassets */,
 				55ACE1412C3BF28E00317501 /* Sprint4.xcdatamodeld */,
 				55ACE13C2C3BF28E00317501 /* Preview Content */,
