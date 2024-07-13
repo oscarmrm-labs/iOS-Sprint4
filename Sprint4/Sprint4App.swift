@@ -6,7 +6,7 @@ struct Sprint4App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContactScreen(coreData: dataController)
                 .environment(\.managedObjectContext,dataController.container.viewContext)
         }
     }

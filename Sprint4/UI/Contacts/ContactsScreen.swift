@@ -1,39 +1,32 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+struct ContactScreen: View {
     @StateObject private var viewModel: ContactsViewModel
+    @State private var contacts: [ContactsEntity] = []
+
+    init(coreData: Sprint4CoreData) {
+        let repository = ContactsRepository(coreData: coreData)
+        let useCase = ContactsUseCase(contactsRepository: repository)
+        _viewModel = StateObject(wrappedValue: ContactsViewModel(useCase: useCase))
+    }
 
     var body: some View {
         NavigationView {
-            VStack{
+            VStack {
                 SearchBar(text: $viewModel.searchText)
                 contactList()
-                .navigationTitle("Contacts")
-                .overlay(
-                    VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            NavigationLink(destination: AddContactScreen()) {
-                                Image(systemName: "plus")
-                                    .resizable()
-                                    .frame(width: 24, height: 24)
-                                    .padding()
-                                    .background(Color.blue)
-                                    .foregroundColor(.white)
-                                    .clipShape(Circle())
-                                    .shadow(radius: 4)
-                            }
-                            .padding()
-                        }
+                    .onAppear {
+                        viewModel.loadContacts()
                     }
-                )
+                    .navigationTitle("Contacts")
+                    .overlay(
+                        floatingActionButton()
+                    )
             }
         }
     }
-    
+
     func contactList() -> some View {
         List {
             ForEach(viewModel.filteredContacts, id: \.self) { contact in
@@ -45,6 +38,26 @@ struct ContentView: View {
                             .font(.subheadline)
                     }
                 }
+            }
+        }
+    }
+    
+    func floatingActionButton() -> some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                NavigationLink(destination: AddContactScreen()) {
+                    Image(systemName: "plus")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                        .shadow(radius: 4)
+                }
+                .padding()
             }
         }
     }
