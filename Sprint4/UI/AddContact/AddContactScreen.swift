@@ -30,12 +30,7 @@ struct AddContactScreen: View {
         .navigationBarTitle("Add Contact", displayMode: .inline)
         .navigationBarItems(trailing: Button("Save") {
             viewModel.addContact()
-            if viewModel.errorMessage == nil {
-                presentationMode.wrappedValue.dismiss()
-            }
+            presentationMode.wrappedValue.dismiss()
         })
-        .alert(item: $viewModel.errorMessage) { errorMessage in
-            Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
-        }
     }
 }

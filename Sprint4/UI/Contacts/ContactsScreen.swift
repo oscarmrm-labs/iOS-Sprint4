@@ -4,8 +4,10 @@ import CoreData
 struct ContactScreen: View {
     @StateObject private var viewModel: ContactsViewModel
     @State private var contacts: [ContactsEntity] = []
+    let coreData: Sprint4CoreData
 
     init(coreData: Sprint4CoreData) {
+        self.coreData = coreData
         let repository = ContactsRepository(coreData: coreData)
         let useCase = ContactsUseCase(contactsRepository: repository)
         _viewModel = StateObject(wrappedValue: ContactsViewModel(useCase: useCase))
@@ -47,7 +49,7 @@ struct ContactScreen: View {
             Spacer()
             HStack {
                 Spacer()
-                NavigationLink(destination: AddContactScreen()) {
+                NavigationLink(destination: AddContactScreen(coreData: coreData)) {
                     Image(systemName: "plus")
                         .resizable()
                         .frame(width: 24, height: 24)

@@ -14,6 +14,6 @@ struct ContactsUseCase {
     }
     
     func addContact(contact: ContactModel, completion: @escaping (Result<Void, Error>) -> Void) {
-        contactsRepository.addContact(contact: contact, completion: completion)
+        contactsRepository.insertContact(contact: contact, completion: completion)
     }
 }

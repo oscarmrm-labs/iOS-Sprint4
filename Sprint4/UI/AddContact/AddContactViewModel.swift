@@ -12,7 +12,7 @@ class AddContactViewModel: ObservableObject {
     @Published var favouriteSport: String = ""
     @Published var latitude: Double = 0.0
     @Published var longitude: Double = 0.0
-    @Published var errorMessage: String?
+    @Published var errorMessage: String = ""
 
     init(useCase: ContactsUseCase) {
         self.useCase = useCase
@@ -34,7 +34,7 @@ class AddContactViewModel: ObservableObject {
             case .success:
                 self?.clearFields()
             case .failure(let error):
-                self?.errorMessage = error.localizedDescription
+                print("error in contact insert")
             }
         }
     }
