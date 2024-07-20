@@ -24,6 +24,7 @@
 		55ACE13B2C3BF28E00317501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ACE13A2C3BF28E00317501 /* Assets.xcassets */; };
 		55ACE13E2C3BF28E00317501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55ACE13D2C3BF28E00317501 /* Preview Assets.xcassets */; };
 		55ACE1432C3BF28E00317501 /* Sprint4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55ACE1412C3BF28E00317501 /* Sprint4.xcdatamodeld */; };
+		55F0AE042C4BD1160008AD05 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F0AE032C4BD1160008AD05 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		55ACE13A2C3BF28E00317501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55ACE13D2C3BF28E00317501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55ACE1422C3BF28E00317501 /* Sprint4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sprint4.xcdatamodel; sourceTree = "<group>"; };
+		55F0AE032C4BD1160008AD05 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				55856F122C41445100FECD1F /* DetailScreen.swift */,
 				5580A0052C4ACEDE002D9FA8 /* DetailViewModel.swift */,
+				55F0AE032C4BD1160008AD05 /* MapView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55ACE1432C3BF28E00317501 /* Sprint4.xcdatamodeld in Sources */,
+				55F0AE042C4BD1160008AD05 /* MapView.swift in Sources */,
 				55A2A26B2C4075E3008ADEE7 /* CoreData.swift in Sources */,
 				55856F152C41460900FECD1F /* AddContactScreen.swift in Sources */,
 				5580A0042C4ACD09002D9FA8 /* extensions.swift in Sources */,

@@ -6,7 +6,6 @@ class AddContactViewModel: NSObject, ObservableObject, CLLocationManagerDelegate
     private let useCase: ContactsUseCase
     private var cancellables = Set<AnyCancellable>()
     
-    // CLLocationManager instance
     private var locationManager: CLLocationManager?
 
     @Published var name: String = ""

@@ -1,8 +1,9 @@
 import SwiftUI
+import MapKit
 
 struct DetailScreen: View {
     @StateObject private var viewModel: ContactDetailViewModel
-    
+
     init(coreData: Sprint4CoreData, contactID: UUID) {
         let repository = ContactsRepository(coreData: coreData)
         let useCase = ContactsUseCase(contactsRepository: repository)
@@ -19,6 +20,12 @@ struct DetailScreen: View {
                 Text("Favourite Sport: \(contact.favouriteSport ?? "N/A")")
                 Text("Latitude: \(contact.latitude)")
                 Text("Longitude: \(contact.longitude)")
+                
+                // Add the map view
+                MapView(latitude: contact.latitude, longitude: contact.longitude)
+                    .frame(height: 300)
+                    .cornerRadius(10)
+                    .padding(.top)
             }
             .padding()
             .navigationTitle("\(contact.name ?? "N/A") \(contact.lastName ?? "N/A")")
