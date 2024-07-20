@@ -25,6 +25,11 @@ struct AddContactScreen: View {
             Section(header: Text("Location")) {
                 TextField("Latitude", value: $viewModel.latitude, formatter: NumberFormatter())
                 TextField("Longitude", value: $viewModel.longitude, formatter: NumberFormatter())
+                Button(action: {
+                    viewModel.requestCurrentLocation()
+                }) {
+                    Text("Use Current Location")
+                }
             }
         }
         .navigationBarTitle("Add Contact", displayMode: .inline)
@@ -32,5 +37,8 @@ struct AddContactScreen: View {
             viewModel.addContact()
             presentationMode.wrappedValue.dismiss()
         })
+        .alert(isPresented: .constant(!viewModel.errorMessage.isEmpty)) {
+            Alert(title: Text("Error"), message: Text(viewModel.errorMessage), dismissButton: .default(Text("OK")))
+        }
     }
 }

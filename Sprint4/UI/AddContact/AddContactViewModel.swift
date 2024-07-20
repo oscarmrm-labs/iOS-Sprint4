@@ -1,9 +1,13 @@
 import Foundation
 import Combine
+import CoreLocation
 
-class AddContactViewModel: ObservableObject {
+class AddContactViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let useCase: ContactsUseCase
     private var cancellables = Set<AnyCancellable>()
+    
+    // CLLocationManager instance
+    private var locationManager: CLLocationManager?
 
     @Published var name: String = ""
     @Published var lastName: String = ""
@@ -16,6 +20,8 @@ class AddContactViewModel: ObservableObject {
 
     init(useCase: ContactsUseCase) {
         self.useCase = useCase
+        super.init()
+        configureLocationManager()
     }
 
     func addContact() {
@@ -34,7 +40,9 @@ class AddContactViewModel: ObservableObject {
             case .success:
                 self?.clearFields()
             case .failure(let error):
-                print("error in contact insert")
+                DispatchQueue.main.async {
+                    self?.errorMessage = "Error in contact insert: \(error.localizedDescription)"
+                }
             }
         }
     }
@@ -47,5 +55,35 @@ class AddContactViewModel: ObservableObject {
         favouriteSport = ""
         latitude = 0.0
         longitude = 0.0
+    }
+    
+    private func configureLocationManager() {
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager?.distanceFilter = kCLDistanceFilterNone
+        locationManager?.requestWhenInUseAuthorization()
+    }
+
+    func requestCurrentLocation() {
+        locationManager?.startUpdatingLocation()
+    }
+
+    // CLLocationManagerDelegate methods
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            DispatchQueue.main.async { [weak self] in
+                self?.latitude = location.coordinate.latitude
+                self?.longitude = location.coordinate.longitude
+                // Consider stopping updates if you want just one location
+                self?.locationManager?.stopUpdatingLocation()
+            }
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        DispatchQueue.main.async { [weak self] in
+            self?.errorMessage = "Failed to find user's location: \(error.localizedDescription)"
+        }
     }
 }
