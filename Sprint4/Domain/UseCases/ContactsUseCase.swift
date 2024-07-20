@@ -16,4 +16,8 @@ struct ContactsUseCase {
     func addContact(contact: ContactModel, completion: @escaping (Result<Void, Error>) -> Void) {
         contactsRepository.insertContact(contact: contact, completion: completion)
     }
+    
+    func execute(contactID: UUID, completion: @escaping (Result<ContactsEntity?, Error>) -> Void) {
+        contactsRepository.getContact(byID: contactID, completion: completion)
+    }
 }

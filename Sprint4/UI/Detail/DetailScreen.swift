@@ -1,21 +1,16 @@
-import Foundation
 import SwiftUI
-import CoreData
 
 struct DetailScreen: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest var contact: FetchedResults<ContactsEntity>
+    @StateObject private var viewModel: ContactDetailViewModel
     
-    init(contactID: UUID) {
-        _contact = FetchRequest<ContactsEntity>(
-            entity: ContactsEntity.entity(),
-            sortDescriptors: [],
-            predicate: NSPredicate(format: "id == %@", contactID as CVarArg)
-        )
+    init(coreData: Sprint4CoreData, contactID: UUID) {
+        let repository = ContactsRepository(coreData: coreData)
+        let useCase = ContactsUseCase(contactsRepository: repository)
+        _viewModel = StateObject(wrappedValue: ContactDetailViewModel(useCase: useCase, contactID: contactID))
     }
-    
+
     var body: some View {
-        if let contact = contact.first {
+        if let contact = viewModel.contact {
             VStack(alignment: .leading) {
                 Text("Name: \(contact.name ?? "N/A")")
                 Text("Last Name: \(contact.lastName ?? "N/A")")
@@ -26,19 +21,13 @@ struct DetailScreen: View {
                 Text("Longitude: \(contact.longitude)")
             }
             .padding()
-            .navigationTitle("\(contact.name ?? "") \(contact.lastName ?? "")")
+            .navigationTitle("\(contact.name ?? "N/A") \(contact.lastName ?? "N/A")")
+        } else if let errorMessage = viewModel.errorMessage {
+            Text(errorMessage)
+                .padding()
         } else {
             Text("Contact not found")
                 .padding()
         }
     }
 }
-
-extension DateFormatter {
-    static let shortDate: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        return formatter
-    }()
-}
-

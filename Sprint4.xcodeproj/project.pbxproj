@@ -12,6 +12,8 @@
 		552C9F052C404EE6001B90EA /* ContactEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C9F042C404EE6001B90EA /* ContactEntity.swift */; };
 		557E08202C4292AC00490D57 /* AddContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E081F2C4292AC00490D57 /* AddContactViewModel.swift */; };
 		557E08222C4294F800490D57 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E08212C4294F800490D57 /* ContactModel.swift */; };
+		5580A0042C4ACD09002D9FA8 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580A0032C4ACD09002D9FA8 /* extensions.swift */; };
+		5580A0062C4ACEDE002D9FA8 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580A0052C4ACEDE002D9FA8 /* DetailViewModel.swift */; };
 		55856F132C41445100FECD1F /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55856F122C41445100FECD1F /* DetailScreen.swift */; };
 		55856F152C41460900FECD1F /* AddContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55856F142C41460900FECD1F /* AddContactScreen.swift */; };
 		55856F182C41519A00FECD1F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55856F172C41519A00FECD1F /* SearchBar.swift */; };
@@ -30,6 +32,8 @@
 		552C9F042C404EE6001B90EA /* ContactEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEntity.swift; sourceTree = "<group>"; };
 		557E081F2C4292AC00490D57 /* AddContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewModel.swift; sourceTree = "<group>"; };
 		557E08212C4294F800490D57 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		5580A0032C4ACD09002D9FA8 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		5580A0052C4ACEDE002D9FA8 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		55856F122C41445100FECD1F /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		55856F142C41460900FECD1F /* AddContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactScreen.swift; sourceTree = "<group>"; };
 		55856F172C41519A00FECD1F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		552C9F022C404E83001B90EA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5580A0022C4ACCFA002D9FA8 /* extensions */,
 				55856F162C41518B00FECD1F /* Components */,
 				55856F1A2C4155EA00FECD1F /* AddContact */,
 				55856F192C4155D600FECD1F /* Detail */,
@@ -125,6 +130,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		5580A0022C4ACCFA002D9FA8 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5580A0032C4ACD09002D9FA8 /* extensions.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		55856F162C41518B00FECD1F /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				55856F122C41445100FECD1F /* DetailScreen.swift */,
+				5580A0052C4ACEDE002D9FA8 /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -261,6 +275,7 @@
 				55ACE1432C3BF28E00317501 /* Sprint4.xcdatamodeld in Sources */,
 				55A2A26B2C4075E3008ADEE7 /* CoreData.swift in Sources */,
 				55856F152C41460900FECD1F /* AddContactScreen.swift in Sources */,
+				5580A0042C4ACD09002D9FA8 /* extensions.swift in Sources */,
 				55856F132C41445100FECD1F /* DetailScreen.swift in Sources */,
 				55075CB02C41A2C3002BDEFA /* ContactsUseCase.swift in Sources */,
 				557E08222C4294F800490D57 /* ContactModel.swift in Sources */,
@@ -270,6 +285,7 @@
 				55856F182C41519A00FECD1F /* SearchBar.swift in Sources */,
 				552C9F052C404EE6001B90EA /* ContactEntity.swift in Sources */,
 				55856F1C2C4156B600FECD1F /* ContactsViewModel.swift in Sources */,
+				5580A0062C4ACEDE002D9FA8 /* DetailViewModel.swift in Sources */,
 				55ACE1372C3BF28D00317501 /* Sprint4App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

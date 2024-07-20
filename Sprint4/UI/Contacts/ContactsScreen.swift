@@ -32,7 +32,7 @@ struct ContactScreen: View {
     func contactList() -> some View {
         List {
             ForEach(viewModel.filteredContacts, id: \.self) { contact in
-                NavigationLink(destination: DetailScreen(contactID: contact.id!)) {
+                NavigationLink(destination: DetailScreen(coreData: coreData, contactID: contact.id!)) {
                     VStack(alignment: .leading) {
                         Text(contact.name ?? "No Name")
                             .font(.headline)

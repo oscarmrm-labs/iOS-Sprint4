@@ -4,10 +4,11 @@ import CoreData
 import Combine
 
 class ContactsViewModel: ObservableObject {
-    
+    @Published var searchText: String = ""
+    @Published private(set) var filteredContacts: [ContactsEntity] = []
+
     private let contactsUseCase: ContactsUseCase
     private let contactsPublisher: PassthroughSubject<[ContactsEntity], Never> = .init()
-    @Published var searchText: String = ""
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -17,15 +18,13 @@ class ContactsViewModel: ObservableObject {
         setupFilteredContactsPublisher()
     }
     
-    var contacts: AnyPublisher<[ContactsEntity], Never> {
+    var contact: AnyPublisher<[ContactsEntity], Never> {
         contactsPublisher.eraseToAnyPublisher()
     }
     
-    @Published private(set) var filteredContacts: [ContactsEntity] = []
-    
     private func setupFilteredContactsPublisher() {
         $searchText
-            .combineLatest(contacts)
+            .combineLatest(contact)
             .map { searchText, contacts in
                 contacts.filter {
                     searchText.isEmpty ||
@@ -40,11 +39,11 @@ class ContactsViewModel: ObservableObject {
     func loadContacts() {
         contactsUseCase.getContactsList { [weak self] result in
             switch result {
-            case .success(let data):
-                print(data)
-                self?.contactsPublisher.send(data)
-            case .failure(let error):
-                print(error)
+                case .success(let data):
+                    print(data)
+                    self?.contactsPublisher.send(data)
+                case .failure(let error):
+                    print(error)
             }
         }
     }
